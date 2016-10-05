@@ -3,8 +3,7 @@ MAINTAINER Terence Lee <terence@heroku.com>
 MAINTAINER Joao Loff <jfloff@gmail.com>
 
 ENV RUBY_VERSION %%RUBY_VERSION%%
-ENV NODE_VERSION 0.12.7
-ENV BUNDLER_VERSION 1.9.10
+ENV NODE_VERSION %%NODE_VERSION%%
 
 RUN mkdir -p /app/user
 WORKDIR /app/user
@@ -24,7 +23,7 @@ RUN mv /app/heroku/ruby/node-v$NODE_VERSION-linux-x64 /app/heroku/ruby/node-$NOD
 ENV PATH /app/heroku/ruby/node-$NODE_VERSION/bin:$PATH
 
 # Install Bundler
-RUN gem install bundler -v $BUNDLER_VERSION --no-ri --no-rdoc
+RUN gem install bundler --no-ri --no-rdoc
 ENV PATH /app/user/bin:/app/heroku/ruby/bundle/ruby/$RUBY_VERSION/bin:$PATH
 ENV BUNDLE_APP_CONFIG /app/heroku/ruby/.bundle/config
 
