@@ -1,5 +1,6 @@
 FROM heroku/cedar:14
 MAINTAINER Terence Lee <terence@heroku.com>
+MAINTAINER Joao Loff <jfloff@gmail.com>
 
 ENV RUBY_VERSION 2.2.3
 ENV NODE_VERSION 0.12.7
@@ -29,7 +30,8 @@ ENV BUNDLE_APP_CONFIG /app/heroku/ruby/.bundle/config
 
 # Run bundler to cache dependencies
 ONBUILD COPY ["Gemfile", "Gemfile.lock", "/app/user/"]
-ONBUILD RUN bundle install --path /app/heroku/ruby/bundle --jobs 4
+# bundle chooses GEM_PATH as default install path
+ONBUILD RUN bundle install --jobs 4
 ONBUILD ADD . /app/user
 
 # How to conditionally `rake assets:precompile`?
