@@ -2,10 +2,8 @@ FROM heroku/cedar:14
 MAINTAINER Terence Lee <terence@heroku.com>
 MAINTAINER Joao Loff <jfloff@gmail.com>
 
-ENV RUBY_VERSION 2.2.3
-ENV NODE_VERSION 0.12.16
-ENV RUBY_VERSION %%RUBY_VERSION%%
-ENV NODE_VERSION %%NODE_VERSION%%
+ENV RUBY_VERSION 2.2.6
+ENV NODE_VERSION 4.7.0
 
 RUN mkdir -p /app/user
 WORKDIR /app/user
