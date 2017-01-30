@@ -5,7 +5,8 @@ MAINTAINER Joao Loff <jfloff@gmail.com>
 ENV RUBY_VERSION %%RUBY_VERSION%%
 ENV NODE_VERSION %%NODE_VERSION%%
 
-RUN mkdir -p /app/user
+RUN mkdir -p /app/user && \
+    git config --global url."https://github".insteadOf git://github
 WORKDIR /app/user
 
 # Install Ruby
@@ -25,6 +26,7 @@ RUN mkdir -p /app/heroku/ruby/bundle/ruby/$RUBY_VERSION && \
     gem install bundler --no-ri --no-rdoc
 ENV PATH /app/user/bin:/app/heroku/ruby/bundle/ruby/$RUBY_VERSION/bin:$PATH
 ENV BUNDLE_APP_CONFIG /app/heroku/ruby/.bundle/config
+RUN bundle config github.https true
 
 # Run bundler to cache dependencies
 ONBUILD COPY ["Gemfile", "Gemfile.lock", "/app/user/"]
