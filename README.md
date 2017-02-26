@@ -3,8 +3,8 @@
 This image is for use with Heroku Docker CLI.
 
 #### Tags available
-* [2.2.6](2.2.3/Dockerfile)
-* [2.2.6](2.2.5/Dockerfile)
+* [2.2.3](2.2.3/Dockerfile)
+* [2.2.5](2.2.5/Dockerfile)
 * [2.2.6](2.2.6/Dockerfile)
 
 _For other tags feel free to PR!_
@@ -26,20 +26,6 @@ at least these contents:
   "description": "An example app.json for heroku-docker",
   "image": "heroku/ruby"
 }
-```
-
-Install the heroku-docker toolbelt plugin:
-
-```sh-session
-$ heroku plugins:install heroku-docker
-```
-
-Initialize your app:
-
-```sh-session
-$ heroku docker:init
-Wrote Dockerfile
-Wrote docker-compose.yml
 ```
 
 And run it with Docker Compose:
