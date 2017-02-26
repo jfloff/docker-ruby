@@ -5,8 +5,7 @@ MAINTAINER Joao Loff <jfloff@gmail.com>
 ENV RUBY_VERSION 2.2.5
 ENV NODE_VERSION 0.12.16
 
-RUN mkdir -p /app/user && \
-    git config --global url."https://github".insteadOf git://github
+RUN mkdir -p /app/user
 WORKDIR /app/user
 
 # Install Ruby
