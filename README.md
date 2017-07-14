@@ -1,3 +1,7 @@
+Since Heroku switched to the new [Heroku-16 image](https://hub.docker.com/r/heroku/heroku/), I am **deprecating** this image.
+
+However, I've developed a new Heroku-16 based image for rails: [jfloff/docker-heroku-rails](https://github.com/jfloff/docker-heroku-rails). Please use that and contribute! 
+
 # Heroku Ruby Docker Image
 
 This image is for use with Heroku Docker CLI.
